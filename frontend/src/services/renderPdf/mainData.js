@@ -1,6 +1,6 @@
 import makeTable from './makeTablePayments';
-import priceWithNds from './priceWithNds';
-import sumToWords from './sumToWords';
+import priceWithNds from '../formatters/priceWithNds';
+import sumToWords from '../formatters/sumToWords';
 
 const MakeainData = (
   formData,

@@ -1,4 +1,4 @@
-import formatDate from './formatDate';
+import formatDate from '../formatters/formatDate';
 import MakeainData from './mainData';
 
 /* eslint-disable no-undef */
