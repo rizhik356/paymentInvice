@@ -1,21 +1,5 @@
-const fromOneToNineHundred = [
-  ['', 'один', 'два', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять'],
-  ['', 'одна', 'две'],
-  ['десять', 'одиннадцать', 'двенадцать', 'тринадцать', 'четырнадцать', 'пятнадцать', 'шестнадцать', 'семнадцать', 'восемнадцать', 'девятнадцать'],
-  ['', '', 'двадцать', 'тридцать', 'сорок', 'пятьдесят', 'шестьдесят', 'семьдесят', 'восемьдесят', 'девяносто'],
-  ['', 'сто', 'двести', 'триста', 'четыреста', 'пятьсот', 'шестьсот', 'семьсот', 'восемьсот', 'девятьсот'],
-];
-const fromThousandToMany = [
-  ['рубл', 'тысяч', 'миллион', 'миллиард', 'триллион', 'квадриллион', 'квинтиллион', 'секстиллион', 'септиллион', 'октиллион', 'нониллион', 'дециллион'],
-  ['ь', 'я', 'ей'],
-  ['а', 'и', ''],
-  ['', 'а', 'ов'],
-];
-
-const coinsObj = {
-  main: 'копе',
-  suffix: ['йка', 'йки', 'ек'],
-};
+import { fromOneToNineHundred, fromThousandToMany, coinsObj } from '../dataSource/wordsAndSufixs';
+import capitalize from './capitalize';
 
 const makeEnding = (i, arrIndex) => {
   const index = i > 2 ? 3 : i + 1;
@@ -79,11 +63,6 @@ const translateCoins = (coins) => {
   } if (lastCoin > '1' && lastCoin < '5') {
     return maketranslateCoin(coins, 1);
   } return maketranslateCoin(coins, 2);
-};
-
-const capitalize = (str) => {
-  const firstLetter = str[0].toUpperCase();
-  return `${firstLetter}${str.slice(1)}`;
 };
 
 const sumToWords = (sum) => {
